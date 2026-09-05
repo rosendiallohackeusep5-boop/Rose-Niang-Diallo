@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import rosePortrait from "./assets/rose-portrait.jpg";
 
 /* ─── Scroll animation hook ─── */
 function useFadeUp() {
@@ -488,7 +489,7 @@ function Hero() {
                 }}
               >
                 <img
-                  src="/rose-portrait.jpg"
+                  src={rosePortrait}
                   alt="Portrait professionnel de Rose Niang Diallo dans son bureau"
                   className="w-full h-[460px] md:h-[500px] object-cover object-top"
                   loading="eager"
