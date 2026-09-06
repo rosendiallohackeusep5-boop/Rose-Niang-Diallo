@@ -1,5 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import rosePortrait from "./assets/rose-portrait.jpg";
+import { ODC_PROJECTS } from "./data/projectsData";
+import CaseStudyModal from "./components/CaseStudyModal";
+import CanvaGallery from "./components/CanvaGallery";
 
 /* ─── Scroll animation hook ─── */
 function useFadeUp() {
@@ -106,12 +109,13 @@ function Nav() {
   const navLinks = [
     { href: "#accueil", label: "Accueil" },
     { href: "#a-propos", label: "À propos" },
-    { href: "#evolution", label: "Évolution" },
+    { href: "#evolution", label: "Parcours" },
     { href: "#experiences", label: "Expériences" },
-    { href: "#formations", label: "Formations" },
     { href: "#competences", label: "Compétences" },
+    { href: "#formations", label: "Formations" },
     { href: "#services", label: "Services" },
-    { href: "#projets", label: "Projets" },
+    { href: "#projets", label: "Projets ODC" },
+    { href: "#canva", label: "Créations Canva" },
     { href: "#temoignages", label: "Témoignages" },
     { href: "#contact", label: "Contact" },
   ];
@@ -1625,640 +1629,160 @@ function Services() {
   );
 }
 
-/* ─── Mockups Vectoriels Pour Chaque Projet ─── */
-function NayroseMockup() {
-  return (
-    <div
-      className="w-full h-full min-h-[260px] p-6 flex flex-col justify-between rounded-2xl relative overflow-hidden select-none"
-      style={{
-        background: "linear-gradient(135deg, #FFF9F6 0%, #F6DDE4 100%)",
-        border: "1px solid rgba(217,140,155,0.3)",
-      }}
-    >
-      <div className="flex items-center justify-between">
-        <span
-          className="text-xs uppercase tracking-widest font-semibold"
-          style={{ color: "#7A1838" }}
-        >
-          NAYROSE BRAND IDENTITY
-        </span>
-        <div className="flex items-center gap-1">
-          <span className="w-3 h-3 rounded-full bg-[#D98C9B]" />
-          <span className="w-3 h-3 rounded-full bg-[#7A1838]" />
-          <span className="w-3 h-3 rounded-full bg-[#4A2635]" />
-        </div>
-      </div>
-
-      <div className="my-auto text-center py-4">
-        <h4
-          className="text-3xl md:text-4xl font-normal tracking-wide"
-          style={{ fontFamily: "'Playfair Display', serif", color: "#7A1838" }}
-        >
-          NAYROSE
-        </h4>
-        <p
-          className="text-xs italic mt-2"
-          style={{ fontFamily: "'Playfair Display', serif", color: "#6B3A4F" }}
-        >
-          « L'éclat de la nature, le cœur d'une mère. »
-        </p>
-      </div>
-
-      <div className="flex items-center justify-between text-[11px] font-mono border-t border-[#D98C9B]/30 pt-3 text-[#7A1838]">
-        <span>Fleurs &amp; Fraises</span>
-        <span>Charte Graphique • Packaging</span>
-      </div>
-    </div>
-  );
-}
-
-function JambaarMockup() {
-  return (
-    <div
-      className="w-full h-full min-h-[260px] p-6 flex flex-col justify-between rounded-2xl relative overflow-hidden select-none"
-      style={{
-        background:
-          "linear-gradient(135deg, rgba(122,24,56,0.06) 0%, #F6DDE4 100%)",
-        border: "1px solid rgba(217,140,155,0.3)",
-      }}
-    >
-      <div className="flex items-center justify-between">
-        <span
-          className="text-xs uppercase tracking-widest font-semibold"
-          style={{ color: "#7A1838" }}
-        >
-          JÀMBAAR AI PLATFORM
-        </span>
-        <span
-          className="px-2 py-0.5 rounded text-[10px] font-mono"
-          style={{ background: "#7A1838", color: "#FFF9F6" }}
-        >
-          UX/UI • IA
-        </span>
-      </div>
-
-      <div className="my-auto py-4">
-        <div className="flex items-center gap-3 mb-2">
-          <span className="text-2xl">⚡</span>
-          <div>
-            <h4
-              className="text-2xl md:text-3xl font-medium"
-              style={{
-                fontFamily: "'Playfair Display', serif",
-                color: "#7A1838",
-              }}
-            >
-              JÀMBAAR
-            </h4>
-            <p className="text-xs font-light" style={{ color: "#4A2635" }}>
-              L'IA au service des talents sportifs pluridisciplinaires
-            </p>
-          </div>
-        </div>
-        <div className="grid grid-cols-3 gap-2 mt-4">
-          <div className="p-2 rounded-lg bg-white/70 text-center">
-            <span className="text-[10px] block font-mono text-[#7A1838]">
-              ATHLÉTISME
-            </span>
-          </div>
-          <div className="p-2 rounded-lg bg-white/70 text-center">
-            <span className="text-[10px] block font-mono text-[#7A1838]">
-              BASKETBALL
-            </span>
-          </div>
-          <div className="p-2 rounded-lg bg-white/70 text-center">
-            <span className="text-[10px] block font-mono text-[#7A1838]">
-              FOOTBALL &amp; PLUS
-            </span>
-          </div>
-        </div>
-      </div>
-
-      <div className="flex items-center justify-between text-[11px] font-mono border-t border-[#D98C9B]/30 pt-3 text-[#7A1838]">
-        <span>Détection IA • Wireframes</span>
-        <span>Prototype Figma</span>
-      </div>
-    </div>
-  );
-}
-
-function LeralMockup() {
-  return (
-    <div
-      className="w-full h-full min-h-[260px] p-6 flex flex-col justify-between rounded-2xl relative overflow-hidden select-none"
-      style={{
-        background: "linear-gradient(135deg, #FFF9F6 0%, #F6DDE4 100%)",
-        border: "1px solid rgba(217,140,155,0.3)",
-      }}
-    >
-      <div className="flex items-center justify-between">
-        <span
-          className="text-xs uppercase tracking-widest font-semibold"
-          style={{ color: "#7A1838" }}
-        >
-          LERAL / SEN FONCIER
-        </span>
-        <span
-          className="text-[10px] px-2 py-0.5 rounded font-mono"
-          style={{ background: "#D98C9B", color: "#FFF9F6" }}
-        >
-          GOUVERNANCE CITOYENNE
-        </span>
-      </div>
-
-      <div className="my-auto py-4">
-        <h4
-          className="text-2xl md:text-3xl font-medium mb-1"
-          style={{ fontFamily: "'Playfair Display', serif", color: "#7A1838" }}
-        >
-          LERAL
-        </h4>
-        <p
-          className="text-xs italic mb-4"
-          style={{ color: "#6B3A4F", fontFamily: "'Playfair Display', serif" }}
-        >
-          « Voir, comprendre, agir. »
-        </p>
-        <div className="p-3 rounded-xl bg-white/80 border border-[#D98C9B]/20">
-          <div className="flex justify-between text-[11px] mb-1 font-mono text-[#7A1838]">
-            <span>Dashboard Citoyen</span>
-            <span>Visualisation Données IA</span>
-          </div>
-          <div className="w-full bg-[#F6DDE4] h-2 rounded-full overflow-hidden">
-            <div className="bg-[#7A1838] h-full w-3/4 rounded-full" />
-          </div>
-        </div>
-      </div>
-
-      <div className="flex items-center justify-between text-[11px] font-mono border-t border-[#D98C9B]/30 pt-3 text-[#7A1838]">
-        <span>Transparence Travaux Publics</span>
-        <span>Architecture de l'info</span>
-      </div>
-    </div>
-  );
-}
-
-function LolliMockup() {
-  return (
-    <div
-      className="w-full h-full min-h-[260px] p-6 flex flex-col justify-between rounded-2xl relative overflow-hidden select-none"
-      style={{
-        background: "linear-gradient(135deg, #F6DDE4 0%, #FFF9F6 100%)",
-        border: "1px solid rgba(217,140,155,0.3)",
-      }}
-    >
-      <div className="flex items-center justify-between">
-        <span
-          className="text-xs uppercase tracking-widest font-semibold"
-          style={{ color: "#7A1838" }}
-        >
-          PROJET DE FORMATION
-        </span>
-        <span
-          className="text-[10px] px-2 py-0.5 rounded font-mono"
-          style={{ background: "#7A1838", color: "#FFF9F6" }}
-        >
-          LOLLI
-        </span>
-      </div>
-
-      <div className="my-auto py-4 text-center">
-        <h4
-          className="text-3xl font-medium tracking-wider"
-          style={{ fontFamily: "'Playfair Display', serif", color: "#7A1838" }}
-        >
-          LOLLI
-        </h4>
-        <p className="text-xs font-light mt-2" style={{ color: "#6B3A4F" }}>
-          Conception &amp; Prototypage interactif
-        </p>
-        <div className="mt-3 inline-block px-3 py-1 rounded-full bg-white/70 border border-[#D98C9B]/30 text-[11px] font-mono text-[#7A1838]">
-          Figma • Canva • Google Workspace
-        </div>
-      </div>
-
-      <div className="flex items-center justify-between text-[11px] font-mono border-t border-[#D98C9B]/30 pt-3 text-[#7A1838]">
-        <span>Problématique &amp; Solution</span>
-        <span>UX/UI &amp; Soutenance</span>
-      </div>
-    </div>
-  );
-}
-
-/* ─── Section 07: Projets (4 Projets Détaillés + Modal) ─── */
-function Projects() {
+/* ─── Section 08: Projets & Réalisations ODC ─── */
+function Projects({ onOpenCaseStudy }: { onOpenCaseStudy: (id: string) => void }) {
   const ref = useFadeUp();
-  const [activeProject, setActiveProject] = useState<any>(null);
+  const [filter, setFilter] = useState<string>("all");
 
-  const projectsList = [
-    {
-      id: "01",
-      name: "NAYROSE",
-      badge: "Branding & identité visuelle",
-      slogan: "L'éclat de la nature, le cœur d'une mère.",
-      concept:
-        "NAYROSE est une marque imaginée autour de l'univers des fleurs et des fraises. Une identité inspirée par la nature, la fraîcheur, l'authenticité et l'amour.",
-      travail: [
-        "Naming",
-        "Positionnement",
-        "Moodboard",
-        "Identité visuelle",
-        "Palette de couleurs",
-        "Typographie",
-        "Charte graphique",
-        "Supports de communication",
-      ],
-      valeurs: [
-        "Qualité",
-        "Fraîcheur",
-        "Authenticité",
-        "Respect de la nature",
-        "Innovation",
-        "Proximité",
-      ],
-      tools: ["Adobe Illustrator", "Canva", "Charte Graphique"],
-      mockup: <NayroseMockup />,
-    },
-    {
-      id: "02",
-      name: "JÀMBAAR",
-      badge: "Projet Fil Rouge – AI & Innovation",
-      slogan: "JÀMBAAR – L'IA au service des talents sportifs.",
-      concept:
-        "Projet digital visant à utiliser l'intelligence artificielle pour contribuer à la détection et à la valorisation des talents sportifs à travers de multiples disciplines (athlétisme, basketball, sports de combat, football, etc.). Pensé comme une expérience UX/UI et digitale complète.",
-      travail: [
-        "Recherche utilisateur",
-        "Concept de détection",
-        "UX/UI Design",
-        "Wireframes",
-        "Prototypage Figma",
-        "Branding",
-        "Identité visuelle",
-        "Réflexion autour de fonctionnalités IA",
-      ],
-      valeurs: [
-        "Multi-sport",
-        "Inclusion",
-        "Performance",
-        "Innovation IA",
-        "Valorisation des jeunes",
-      ],
-      tools: ["Figma", "Outils IA", "Adobe Illustrator", "Wireframing"],
-      mockup: <JambaarMockup />,
-    },
-    {
-      id: "03",
-      name: "LERAL / SEN FONCIER",
-      badge: "Transparence & Gouvernance citoyenne",
-      slogan: "LERAL – Voir, comprendre, agir.",
-      concept:
-        "Projet digital conçu pour permettre aux citoyens de mieux suivre, visualiser et comprendre les projets fonciers et les travaux publics d'envergure grâce à une interface claire et des données rendues intelligibles.",
-      travail: [
-        "UX/UI Design",
-        "Recherche utilisateur",
-        "Architecture de l'information",
-        "Dashboard interactif",
-        "Visualisation de données",
-        "Intelligence artificielle",
-        "Prototypage",
-      ],
-      valeurs: [
-        "Transparence",
-        "Accessibilité citoyenne",
-        "Intelligibilité",
-        "Impact public",
-      ],
-      tools: [
-        "Figma",
-        "Data Viz",
-        "IA d'analyse",
-        "Architecture de l'information",
-      ],
-      mockup: <LeralMockup />,
-    },
-    {
-      id: "04",
-      name: "LOLLI",
-      badge: "Projet de formation",
-      slogan: "Conception créative & solution digitale.",
-      concept:
-        "Projet réalisé dans le cadre de la formation à la Sonatel Academy / Orange Digital Center. Structuré autour d'une démarche de design thinking, de la compréhension du besoin jusqu'à la restitution du prototype interactif.",
-      problematique:
-        "[Espace réservé pour la description exacte de la problématique]",
-      solution: "[Espace réservé pour la solution développée]",
-      role: "UX/UI Designer & Créatrice de supports",
-      travail: [
-        "Présentation du concept",
-        "Problématique & Solution",
-        "Conception visuelle & Mockups",
-        "Rôle réalisé",
-        "Prototypage",
-      ],
-      valeurs: [
-        "Créativité",
-        "Approche collaborative",
-        "Design centré utilisateur",
-      ],
-      tools: ["Figma", "Canva", "Google Workspace", "Méthodologie Agile"],
-      mockup: <LolliMockup />,
-    },
+  const categories = [
+    { id: "all", label: "Tous les projets" },
+    { id: "scrum", label: "Agile & Scrum" },
+    { id: "ux-ui", label: "UX/UI Design" },
+    { id: "branding", label: "Branding" },
+    { id: "dataviz", label: "DataViz & IA" },
   ];
 
-  return (
-    <section id="projets" style={{ background: "#FFF9F6" }} className="py-28">
-      <div ref={ref} className="fade-up max-w-7xl mx-auto px-6 md:px-10">
-        <SectionLabel num="07" text="Projets" />
+  const filteredProjects = ODC_PROJECTS.filter((p) => {
+    if (filter === "all") return true;
+    if (filter === "scrum") return p.id === "lolli";
+    if (filter === "ux-ui") return p.id === "joj-dakar-2026" || p.id === "flo";
+    if (filter === "branding") return p.id === "nayrose";
+    if (filter === "dataviz") return p.id === "sen-foncier" || p.id === "jambaar";
+    return true;
+  });
 
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-          <div>
-            <h2
-              className="leading-tight"
-              style={{
-                fontFamily: "'Playfair Display', serif",
-                fontSize: "clamp(2.2rem, 4vw, 3.5rem)",
-                fontWeight: 400,
-                color: "#7A1838",
-              }}
-            >
-              Réalisations &amp; Projets
-            </h2>
-            <p className="text-sm font-light mt-2" style={{ color: "#6B3A4F" }}>
-              Découvrez les cas d'étude conçus avec rigueur, innovation et
-              passion créative.
-            </p>
-          </div>
-          <span className="text-xs font-mono text-[#D98C9B]">
-            4 PROJETS MAJEURS
-          </span>
+  return (
+    <section id="projets" className="py-28 px-6 md:px-10 bg-[#FFF9F6] relative overflow-hidden">
+      {/* Decorative glows */}
+      <div
+        className="absolute top-10 left-1/2 -translate-x-1/2 w-[800px] h-[300px] rounded-full opacity-10 pointer-events-none blur-3xl"
+        style={{ background: "#7A1838" }}
+      />
+
+      <div ref={ref} className="fade-up max-w-7xl mx-auto relative z-10">
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <SectionLabel num="08" text="TRAVAUX & RÉALISATIONS ODC" />
+          <h2
+            className="text-3xl md:text-5xl lg:text-6xl font-normal font-display tracking-tight text-[#4A2635] mb-6"
+          >
+            Projets Réalisés à Orange Digital Center
+          </h2>
+          <p className="text-sm md:text-base text-[#4A2635]/80 font-light leading-relaxed">
+            Chaque réalisation ci-dessous reflète le <strong>travail réellement effectué</strong> au cours de ma formation : de la gestion agile en tant que Scrum Master au cycle complet d'UX/UI Design, en passant par le branding d'une marque artisanale et la visualisation de données citoyennes.
+          </p>
         </div>
 
-        {/* Projects Cards Grid */}
-        <div className="grid lg:grid-cols-2 gap-10">
-          {projectsList.map((p) => (
+        {/* Filter Pills */}
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
+          {categories.map((cat) => (
+            <button
+              key={cat.id}
+              onClick={() => setFilter(cat.id)}
+              className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-all duration-300 ${
+                filter === cat.id
+                  ? "bg-[#7A1838] text-[#FFF9F6] shadow-md scale-105"
+                  : "bg-white text-[#4A2635] border border-[#D98C9B]/30 hover:bg-[#D98C9B]/15"
+              }`}
+            >
+              {cat.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Projects Grid: 6 Distinct, Rich Editorial Cards */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredProjects.map((p) => (
             <div
               key={p.id}
-              className="p-8 rounded-3xl flex flex-col justify-between transition-all duration-400 hover:shadow-xl"
-              style={{
-                background: "#F6DDE4",
-                border: "1px solid rgba(217, 140, 155, 0.3)",
-              }}
+              className="group rounded-3xl bg-white border border-[#D98C9B]/30 shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col justify-between overflow-hidden hover:-translate-y-1.5"
             >
-              <div>
-                {/* Visual Mockup Container */}
-                <div className="mb-6 rounded-2xl overflow-hidden shadow-sm aspect-[16/10]">
-                  {p.mockup}
-                </div>
+              {/* Card Banner / Visual Preview */}
+              <div
+                className={`relative p-7 bg-gradient-to-br ${p.heroBgGradient} text-[#FFF9F6] flex flex-col justify-between min-h-[220px] overflow-hidden`}
+              >
+                {/* Background glow & shape */}
+                <div
+                  className="absolute -right-8 -bottom-8 w-36 h-36 rounded-full opacity-25 blur-xl group-hover:scale-125 transition-transform duration-700"
+                  style={{ background: p.accentColor }}
+                />
 
-                {/* Badges and Title */}
-                <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                <div className="relative z-10 flex items-center justify-between">
                   <span
-                    className="pill-tag text-[10px] font-semibold"
-                    style={{
-                      background: "#7A1838",
-                      color: "#FFF9F6",
-                      borderColor: "#7A1838",
-                    }}
+                    className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full border border-white/30 bg-black/20 backdrop-blur-sm"
                   >
-                    {p.badge}
+                    {p.category}
                   </span>
                   <span
-                    className="text-xs font-mono font-bold"
-                    style={{ color: "#7A1838" }}
-                  >
-                    Projet {p.id}
-                  </span>
+                    className="w-2.5 h-2.5 rounded-full"
+                    style={{ background: p.accentColor }}
+                  />
                 </div>
 
-                <h3
-                  className="text-2xl font-medium mb-1"
-                  style={{
-                    fontFamily: "'Playfair Display', serif",
-                    color: "#7A1838",
-                  }}
-                >
-                  {p.name}
-                </h3>
+                <div className="relative z-10 my-auto py-2">
+                  <h3 className="text-2xl sm:text-3xl font-bold font-display tracking-tight text-white mb-1">
+                    {p.title}
+                  </h3>
+                  {p.slogan && (
+                    <p className="text-xs italic font-display text-[#F6DDE4]/90">
+                      {p.slogan}
+                    </p>
+                  )}
+                </div>
 
-                {p.slogan && (
-                  <p
-                    className="text-xs italic mb-4 font-normal"
-                    style={{
-                      fontFamily: "'Playfair Display', serif",
-                      color: "#7A1838",
-                    }}
-                  >
-                    « {p.slogan} »
-                  </p>
-                )}
-
-                <p
-                  className="text-sm font-light leading-relaxed mb-6"
-                  style={{ color: "#4A2635" }}
-                >
-                  {p.concept}
-                </p>
-
-                {/* Values Pills */}
-                <div className="mb-6">
-                  <p
-                    className="text-xs font-medium uppercase tracking-wider mb-2"
-                    style={{ color: "#7A1838" }}
-                  >
-                    Valeurs &amp; Atouts :
-                  </p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {p.valeurs.map((val, vIdx) => (
-                      <span
-                        key={vIdx}
-                        className="text-[11px] px-2.5 py-1 rounded-full font-light"
-                        style={{
-                          background: "#FFF9F6",
-                          color: "#4A2635",
-                          border: "1px solid rgba(217, 140, 155, 0.25)",
-                        }}
-                      >
-                        {val}
-                      </span>
-                    ))}
-                  </div>
+                <div className="relative z-10 flex items-center justify-between text-[11px] text-white/80 pt-2 border-t border-white/15">
+                  <span className="font-medium">{p.role}</span>
+                  <span className="text-[10px] font-mono opacity-80">{p.year}</span>
                 </div>
               </div>
 
-              {/* Action */}
-              <div className="pt-4 border-t border-[#D98C9B]/25 flex items-center justify-between">
-                <div className="flex flex-wrap gap-1.5">
-                  {p.tools.map((t, tIdx) => (
-                    <span
-                      key={tIdx}
-                      className="text-[10px] font-mono px-2 py-0.5 rounded"
-                      style={{
-                        background: "rgba(122, 24, 56, 0.08)",
-                        color: "#7A1838",
-                      }}
-                    >
-                      {t}
+              {/* Card Body */}
+              <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-6">
+                <div className="space-y-4">
+                  <p className="text-xs sm:text-sm text-[#4A2635]/85 leading-relaxed">
+                    {p.shortDescription}
+                  </p>
+
+                  {/* Real Deliverables Badges */}
+                  <div className="space-y-1.5">
+                    <span className="text-[10px] uppercase font-bold tracking-widest text-[#7A1838] block">
+                      Livrables &amp; Rôle Réel
                     </span>
-                  ))}
+                    <div className="flex flex-wrap gap-1.5">
+                      {p.deliverables.map((d, dIdx) => (
+                        <span
+                          key={dIdx}
+                          className="text-[10px] px-2.5 py-0.5 rounded-md bg-[#FFF9F6] border border-[#D98C9B]/30 text-[#4A2635] font-medium"
+                        >
+                          {d.label}: {d.value}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-                <button
-                  onClick={() => setActiveProject(p)}
-                  className="pill-tag text-xs font-semibold cursor-pointer transition-all duration-300 hover:bg-[#7A1838] hover:text-[#FFF9F6]"
-                  style={{
-                    color: "#7A1838",
-                    borderColor: "#7A1838",
-                    background: "transparent",
-                  }}
-                >
-                  Détails du projet →
-                </button>
+
+                {/* Card Footer with CTA */}
+                <div className="pt-4 border-t border-[#D98C9B]/20 flex items-center justify-between gap-3">
+                  <div className="flex flex-wrap gap-1 max-w-[60%]">
+                    {p.tools.slice(0, 2).map((t, idx) => (
+                      <span key={idx} className="text-[10px] text-[#7A1838] font-mono">
+                        #{t}
+                      </span>
+                    ))}
+                  </div>
+
+                  <button
+                    onClick={() => onOpenCaseStudy(p.id)}
+                    className="px-4 py-2 rounded-full bg-[#7A1838] group-hover:bg-[#4A2635] text-[#FFF9F6] text-xs font-semibold tracking-wider uppercase transition-all duration-300 shadow-sm flex items-center gap-1.5 group-hover:translate-x-0.5"
+                  >
+                    <span>Voir le projet</span>
+                    <span>→</span>
+                  </button>
+                </div>
               </div>
             </div>
           ))}
         </div>
-
-        {/* Modal / Detail View */}
-        {activeProject && (
-          <div
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm animate-fadeIn"
-            onClick={() => setActiveProject(null)}
-          >
-            <div
-              className="relative max-w-2xl w-full max-h-[90vh] overflow-y-auto p-8 rounded-3xl shadow-2xl"
-              style={{
-                background: "#FFF9F6",
-                border: "2px solid #D98C9B",
-                color: "#4A2635",
-              }}
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button
-                className="absolute top-6 right-6 w-9 h-9 rounded-full flex items-center justify-center text-sm font-semibold transition-colors hover:bg-[#7A1838] hover:text-[#FFF9F6]"
-                style={{
-                  background: "#F6DDE4",
-                  color: "#7A1838",
-                  border: "1px solid rgba(122,24,56,0.2)",
-                }}
-                onClick={() => setActiveProject(null)}
-              >
-                ✕
-              </button>
-
-              <span
-                className="pill-tag text-xs font-semibold mb-3"
-                style={{
-                  background: "#7A1838",
-                  color: "#FFF9F6",
-                  borderColor: "#7A1838",
-                }}
-              >
-                {activeProject.badge}
-              </span>
-
-              <h3
-                className="text-3xl font-medium mb-1"
-                style={{
-                  fontFamily: "'Playfair Display', serif",
-                  color: "#7A1838",
-                }}
-              >
-                {activeProject.name}
-              </h3>
-
-              {activeProject.slogan && (
-                <p
-                  className="text-sm italic mb-6"
-                  style={{
-                    fontFamily: "'Playfair Display', serif",
-                    color: "#6B3A4F",
-                  }}
-                >
-                  « {activeProject.slogan} »
-                </p>
-              )}
-
-              <div className="mb-6 p-4 rounded-xl bg-[#F6DDE4]/50 border border-[#D98C9B]/30">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-[#7A1838] mb-1">
-                  Concept &amp; Vision
-                </h4>
-                <p className="text-sm leading-relaxed">
-                  {activeProject.concept}
-                </p>
-              </div>
-
-              {activeProject.problematique && (
-                <div className="mb-4">
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-[#7A1838] mb-1">
-                    Problématique
-                  </h4>
-                  <p className="text-xs italic bg-white/70 p-3 rounded-lg border border-dashed border-[#D98C9B]/50">
-                    {activeProject.problematique}
-                  </p>
-                </div>
-              )}
-
-              {activeProject.solution && (
-                <div className="mb-4">
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-[#7A1838] mb-1">
-                    Solution
-                  </h4>
-                  <p className="text-xs italic bg-white/70 p-3 rounded-lg border border-dashed border-[#D98C9B]/50">
-                    {activeProject.solution}
-                  </p>
-                </div>
-              )}
-
-              {activeProject.role && (
-                <div className="mb-4">
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-[#7A1838] mb-1">
-                    Rôle réalisé
-                  </h4>
-                  <p className="text-sm font-medium">{activeProject.role}</p>
-                </div>
-              )}
-
-              <div className="mb-6">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-[#7A1838] mb-2">
-                  Travail réalisé &amp; Livrables
-                </h4>
-                <div className="grid grid-cols-2 gap-2">
-                  {activeProject.travail.map((t: string, i: number) => (
-                    <div
-                      key={i}
-                      className="p-2.5 rounded-lg bg-white/70 border border-[#D98C9B]/20 text-xs flex items-center gap-2"
-                    >
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#7A1838]" />
-                      <span>{t}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-[#D98C9B]/20">
-                <div className="flex flex-wrap gap-2">
-                  {activeProject.tools.map((tool: string, idx: number) => (
-                    <span
-                      key={idx}
-                      className="text-xs font-mono px-3 py-1 rounded-full bg-[#F6DDE4] text-[#7A1838]"
-                    >
-                      {tool}
-                    </span>
-                  ))}
-                </div>
-                <button
-                  onClick={() => setActiveProject(null)}
-                  className="pill-tag text-xs font-semibold py-2 px-6"
-                  style={{
-                    background: "#7A1838",
-                    color: "#FFF9F6",
-                    borderColor: "#7A1838",
-                  }}
-                >
-                  Fermer
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
     </section>
   );
@@ -2985,23 +2509,57 @@ function Footer() {
 
 /* ─── Main App ─── */
 export default function App() {
+  const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
+
   return (
     <div className="min-h-full selection:bg-[#D98C9B] selection:text-[#FFF9F6]">
       <Nav />
       <main>
+        {/* 01: ACCUEIL */}
         <Hero />
+
+        {/* 02: À PROPOS */}
         <About />
+
+        {/* 03: MON PARCOURS */}
         <Evolution />
+
+        {/* 04: EXPÉRIENCES */}
         <Experiences />
-        <Formations />
+
+        {/* 05: COMPÉTENCES */}
         <Competences />
+
+        {/* 06: FORMATIONS */}
+        <Formations />
+
+        {/* 07: SERVICES */}
         <Services />
-        <Projects />
+
+        {/* 08: PROJETS & RÉALISATIONS ODC */}
+        <Projects onOpenCaseStudy={(id) => setSelectedProjectId(id)} />
+
+        {/* 09: PRÉSENTATIONS & CRÉATIONS CANVA */}
+        <CanvaGallery />
+
+        {/* 10: OUTILS */}
         <Tools />
+
+        {/* 11: TÉMOIGNAGES */}
         <Testimonials />
+
+        {/* 12: CONTACT */}
         <Contact />
       </main>
+
       <Footer />
+
+      {/* Case Study Full Modal */}
+      <CaseStudyModal
+        projectId={selectedProjectId}
+        onClose={() => setSelectedProjectId(null)}
+        onSelectProject={(id) => setSelectedProjectId(id)}
+      />
     </div>
   );
 }
