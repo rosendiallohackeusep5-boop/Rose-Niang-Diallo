@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ProjectData, ODC_PROJECTS } from "../data/projectsData";
+import { ProjectLogo } from "./ProjectLogo";
+import ToolBadge from "./ToolBadge";
 
 interface CaseStudyModalProps {
   projectId: string | null;
@@ -56,17 +58,13 @@ export default function CaseStudyModal({
         {/* Sticky Header Bar */}
         <div className="sticky top-0 z-30 px-6 py-4 bg-[#FFF9F6]/95 backdrop-blur-md border-b border-[#D98C9B]/20 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <span
-              className="w-3 h-3 rounded-full animate-pulse"
-              style={{ background: project.accentColor }}
-            />
+            <span className="w-2.5 h-2.5 rounded-full bg-[#7A1838] animate-pulse" />
             <div>
               <p className="text-[10px] uppercase tracking-widest text-[#7A1838] font-bold">
                 Étude de cas détaillée • ODC
               </p>
               <h3
-                className="text-lg md:text-xl font-bold font-display leading-tight"
-                style={{ color: "#4A2635" }}
+                className="text-lg md:text-xl font-bold font-display leading-tight text-[#4A2635]"
               >
                 {project.title}
               </h3>
@@ -74,7 +72,7 @@ export default function CaseStudyModal({
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="hidden sm:inline-flex text-xs px-3 py-1 rounded-full bg-[#7A1838]/10 text-[#7A1838] font-medium">
+            <span className="hidden sm:inline-flex text-xs px-3 py-1 rounded-full bg-[#7A1838]/10 text-[#7A1838] font-medium border border-[#7A1838]/20">
               {project.category}
             </span>
             <button
@@ -91,43 +89,42 @@ export default function CaseStudyModal({
 
         {/* Scrollable Content Body */}
         <div className="flex-1 overflow-y-auto">
-          {/* Hero Banner with Project identity */}
+          {/* Hero Banner with Portfolio Palette */}
           <div
-            className={`relative p-8 md:p-14 bg-gradient-to-br ${project.heroBgGradient} text-[#FFF9F6] overflow-hidden`}
+            className="relative p-8 md:p-14 bg-gradient-to-br from-[#7A1838] via-[#4A2635] to-[#361522] text-[#FFF9F6] overflow-hidden"
           >
             {/* Geometric decoration */}
             <div
-              className="absolute -right-20 -bottom-20 w-80 h-80 rounded-full opacity-20 blur-3xl pointer-events-none"
-              style={{ background: project.accentColor }}
+              className="absolute -right-20 -bottom-20 w-80 h-80 rounded-full opacity-20 blur-3xl pointer-events-none bg-[#D98C9B]"
             />
 
             <div className="relative z-10 max-w-4xl">
-              <div className="flex flex-wrap items-center gap-3 mb-4">
+              <div className="flex flex-wrap items-center gap-3 mb-5">
                 <span
-                  className="px-3.5 py-1 rounded-full text-xs font-bold tracking-wider uppercase border"
-                  style={{
-                    color: "#FFF9F6",
-                    borderColor: "rgba(255, 249, 246, 0.4)",
-                    background: "rgba(255, 249, 246, 0.1)",
-                  }}
+                  className="px-3.5 py-1 rounded-full text-xs font-bold tracking-wider uppercase border border-[#F6DDE4]/40 bg-white/10 text-[#F6DDE4]"
                 >
                   {project.badgeLabel}
                 </span>
                 {project.isDefenseProject && (
-                  <span className="px-3.5 py-1 rounded-full text-xs font-bold tracking-wider uppercase bg-emerald-500/20 text-emerald-200 border border-emerald-400/40">
+                  <span className="px-3.5 py-1 rounded-full text-xs font-bold tracking-wider uppercase bg-[#D98C9B]/20 text-[#FFF9F6] border border-[#D98C9B]/40">
                     Projet de soutenance — à compléter après ma soutenance
                   </span>
                 )}
                 {project.isReplicationExercise && (
-                  <span className="px-3.5 py-1 rounded-full text-xs font-bold tracking-wider uppercase bg-purple-500/20 text-purple-200 border border-purple-400/40">
+                  <span className="px-3.5 py-1 rounded-full text-xs font-bold tracking-wider uppercase bg-[#F6DDE4]/20 text-[#F6DDE4] border border-[#F6DDE4]/40">
                     Exercice de reproduction Figma
                   </span>
                 )}
               </div>
 
+              {/* Project Logo placed ABOVE the Project Name */}
+              <div className="mb-4">
+                <ProjectLogo projectId={project.id} size={48} light={true} />
+              </div>
+
+              {/* Project Name */}
               <h1
-                className="text-3xl md:text-5xl lg:text-6xl font-normal tracking-tight font-display mb-3"
-                style={{ color: "#FFF9F6" }}
+                className="text-3xl md:text-5xl lg:text-6xl font-normal tracking-tight font-display mb-3 text-[#FFF9F6]"
               >
                 {project.title}
               </h1>
@@ -148,25 +145,25 @@ export default function CaseStudyModal({
               {/* Quick Info Grid */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-5 rounded-2xl bg-black/25 backdrop-blur-md border border-white/15">
                 <div>
-                  <p className="text-[11px] uppercase tracking-wider text-white/60 font-semibold mb-1">
+                  <p className="text-[11px] uppercase tracking-wider text-[#F6DDE4]/70 font-semibold mb-1">
                     Mon Rôle
                   </p>
                   <p className="text-xs sm:text-sm font-medium text-white">{project.role}</p>
                 </div>
                 <div>
-                  <p className="text-[11px] uppercase tracking-wider text-white/60 font-semibold mb-1">
-                    Cadre & Lieu
+                  <p className="text-[11px] uppercase tracking-wider text-[#F6DDE4]/70 font-semibold mb-1">
+                    Cadre &amp; Lieu
                   </p>
                   <p className="text-xs sm:text-sm font-medium text-white">Orange Digital Center</p>
                 </div>
                 <div>
-                  <p className="text-[11px] uppercase tracking-wider text-white/60 font-semibold mb-1">
+                  <p className="text-[11px] uppercase tracking-wider text-[#F6DDE4]/70 font-semibold mb-1">
                     Période
                   </p>
                   <p className="text-xs sm:text-sm font-medium text-white">{project.year}</p>
                 </div>
                 <div>
-                  <p className="text-[11px] uppercase tracking-wider text-white/60 font-semibold mb-1">
+                  <p className="text-[11px] uppercase tracking-wider text-[#F6DDE4]/70 font-semibold mb-1">
                     Livrables Réels
                   </p>
                   <div className="flex flex-wrap gap-1.5 mt-0.5">
@@ -187,7 +184,7 @@ export default function CaseStudyModal({
                     )}
                     {!project.hasLogo && !project.hasWireframes && !project.hasPrototype && (
                       <span className="text-[10px] px-2 py-0.5 rounded bg-white/20 text-white font-medium">
-                        DataViz & IA
+                        DataViz &amp; IA
                       </span>
                     )}
                   </div>
@@ -208,18 +205,6 @@ export default function CaseStudyModal({
             >
               Étude de Cas
             </button>
-            {project.colorPalette && (
-              <button
-                onClick={() => setActiveTab("palette")}
-                className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all whitespace-nowrap ${
-                  activeTab === "palette"
-                    ? "bg-[#7A1838] text-[#FFF9F6]"
-                    : "bg-transparent text-[#4A2635] hover:bg-[#D98C9B]/15"
-                }`}
-              >
-                Palette & Univers
-              </button>
-            )}
             {project.scrumDeliverables && (
               <button
                 onClick={() => setActiveTab("scrum")}
@@ -241,7 +226,7 @@ export default function CaseStudyModal({
                     : "bg-transparent text-[#4A2635] hover:bg-[#D98C9B]/15"
                 }`}
               >
-                Comparatif & Figma
+                Comparatif &amp; Figma
               </button>
             )}
           </div>
@@ -270,8 +255,7 @@ export default function CaseStudyModal({
                           className="relative pl-6 sm:pl-8 border-l-2 border-[#D98C9B]/40 pb-6 last:pb-0"
                         >
                           <div
-                            className="absolute -left-[9px] top-0 w-4 h-4 rounded-full border-2 border-[#FFF9F6]"
-                            style={{ background: project.accentColor }}
+                            className="absolute -left-[9px] top-0 w-4 h-4 rounded-full border-2 border-[#FFF9F6] bg-[#7A1838]"
                           />
                           <div className="mb-2">
                             <span className="text-[11px] uppercase tracking-wider font-semibold text-[#7A1838]">
@@ -300,8 +284,7 @@ export default function CaseStudyModal({
                                 {sec.keyPoints.map((point, pIdx) => (
                                   <li key={pIdx} className="flex items-start gap-2">
                                     <span
-                                      className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0"
-                                      style={{ background: project.accentColor }}
+                                      className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0 bg-[#7A1838]"
                                     />
                                     <span>{point}</span>
                                   </li>
@@ -316,7 +299,23 @@ export default function CaseStudyModal({
 
                   {/* Sidebar with tools, deliverables & real specifications */}
                   <div className="lg:col-span-4 space-y-6">
-                    <div className="p-6 rounded-2xl bg-white border border-[#D98C9B]/30 shadow-sm space-y-5">
+                    {/* OUTILS UTILISÉS AVEC VRAIS LOGOS OFFICIELS */}
+                    <div className="p-6 rounded-2xl bg-white border border-[#D98C9B]/30 shadow-sm space-y-4">
+                      <h4 className="text-xs uppercase tracking-widest text-[#7A1838] font-bold border-b border-[#D98C9B]/20 pb-3 flex items-center justify-between">
+                        <span>OUTILS UTILISÉS</span>
+                        <span className="text-[10px] text-[#D98C9B] font-mono">
+                          {project.tools.length} outils
+                        </span>
+                      </h4>
+
+                      <div className="flex flex-col gap-2">
+                        {project.tools.map((tool, tIdx) => (
+                          <ToolBadge key={tIdx} name={tool} />
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="p-6 rounded-2xl bg-white border border-[#D98C9B]/30 shadow-sm space-y-4">
                       <h4 className="text-xs uppercase tracking-widest text-[#7A1838] font-bold border-b border-[#D98C9B]/20 pb-3">
                         Livrables &amp; Spécifications
                       </h4>
@@ -333,32 +332,14 @@ export default function CaseStudyModal({
                           </div>
                         ))}
                       </div>
-
-                      <div className="pt-4 border-t border-[#D98C9B]/20">
-                        <span className="text-[#7A1838] font-bold uppercase tracking-wider block text-[10px] mb-2">
-                          Outils Utilisés
-                        </span>
-                        <div className="flex flex-wrap gap-2">
-                          {project.tools.map((tool, tIdx) => (
-                            <span
-                              key={tIdx}
-                              className="text-xs px-3 py-1 rounded-full bg-[#FFF9F6] border border-[#D98C9B]/40 text-[#4A2635] font-medium"
-                            >
-                              {tool}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
                     </div>
 
-                    {/* Specific Project Note Cards */}
+                    {/* Specific Project Notes */}
                     {project.id === "sen-foncier" && (
-                      <div className="p-5 rounded-2xl bg-sky-50 border border-sky-200 text-sky-950 text-xs leading-relaxed space-y-2">
-                        <div className="flex items-center gap-2 font-bold text-sky-800">
-                          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                          <span>Règle de restitution stricte</span>
+                      <div className="p-5 rounded-2xl bg-[#FFF9F6] border border-[#D98C9B]/40 text-[#4A2635] text-xs leading-relaxed space-y-2">
+                        <div className="flex items-center gap-2 font-bold text-[#7A1838]">
+                          <span className="w-2 h-2 rounded-full bg-[#7A1838]" />
+                          <span>Spécificité SEN FONCIER</span>
                         </div>
                         <p>
                           Conformément au travail réel effectué, ce projet ne comporte pas de logo, de wireframe ou de prototype. La valeur repose intégralement sur la recherche de gouvernance, l'architecture d'information et la visualisation de données citoyennes.
@@ -367,25 +348,21 @@ export default function CaseStudyModal({
                     )}
 
                     {project.id === "joj-dakar-2026" && (
-                      <div className="p-5 rounded-2xl bg-amber-50 border border-amber-200 text-amber-950 text-xs leading-relaxed space-y-2">
-                        <div className="flex items-center gap-2 font-bold text-amber-800">
-                          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-                          </svg>
-                          <span>Projet UX/UI de Référence</span>
+                      <div className="p-5 rounded-2xl bg-[#FFF9F6] border border-[#D98C9B]/40 text-[#4A2635] text-xs leading-relaxed space-y-2">
+                        <div className="flex items-center gap-2 font-bold text-[#7A1838]">
+                          <span className="w-2 h-2 rounded-full bg-[#7A1838]" />
+                          <span>Cycle UX/UI Complet</span>
                         </div>
                         <p>
-                          Ce projet est le seul dans lequel j'ai conçu l'intégralité du cycle UX/UI : arborescence, wireframes, logo officiel & mascotte AYO intégrés, maquettes haute fidélité et prototypage interactif.
+                          Ce projet est le seul dans lequel j'ai conçu l'intégralité du cycle UX/UI : arborescence, wireframes, logo officiel &amp; mascotte AYO intégrés, maquettes haute fidélité et prototypage interactif.
                         </p>
                       </div>
                     )}
 
                     {project.id === "flo" && (
-                      <div className="p-5 rounded-2xl bg-purple-50 border border-purple-200 text-purple-950 text-xs leading-relaxed space-y-2">
-                        <div className="flex items-center gap-2 font-bold text-purple-800">
-                          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
+                      <div className="p-5 rounded-2xl bg-[#FFF9F6] border border-[#D98C9B]/40 text-[#4A2635] text-xs leading-relaxed space-y-2">
+                        <div className="flex items-center gap-2 font-bold text-[#7A1838]">
+                          <span className="w-2 h-2 rounded-full bg-[#7A1838]" />
                           <span>Exercice de Maquettage Figma</span>
                         </div>
                         <p>
@@ -396,60 +373,6 @@ export default function CaseStudyModal({
                   </div>
                 </div>
               </>
-            )}
-
-            {/* Color Palette & Visual Identity Tab */}
-            {activeTab === "palette" && project.colorPalette && (
-              <div className="space-y-8">
-                <div>
-                  <h4 className="text-xl md:text-2xl font-bold font-display text-[#4A2635] mb-2">
-                    Palette Chromatique &amp; Identité Visuelle
-                  </h4>
-                  <p className="text-sm text-[#4A2635]/80">
-                    Chaque couleur a été choisie pour servir l'expérience et l'univers du projet.
-                  </p>
-                </div>
-
-                <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
-                  {project.colorPalette.map((col, cIdx) => (
-                    <div
-                      key={cIdx}
-                      className="p-5 rounded-2xl bg-white border border-[#D98C9B]/30 shadow-sm space-y-3"
-                    >
-                      <div
-                        className="w-full h-24 rounded-xl shadow-inner border border-black/10 flex items-end p-3"
-                        style={{ background: col.hex }}
-                      >
-                        <span
-                          className="text-[11px] font-mono px-2 py-0.5 rounded bg-black/40 text-white backdrop-blur-sm"
-                        >
-                          {col.hex}
-                        </span>
-                      </div>
-                      <div>
-                        <p className="font-bold text-sm text-[#4A2635]">{col.name}</p>
-                        <p className="text-xs text-[#7A1838] font-medium">{col.role}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                {project.typography && (
-                  <div className="p-6 rounded-2xl bg-white border border-[#D98C9B]/30 space-y-4">
-                    <h5 className="text-xs uppercase tracking-widest text-[#7A1838] font-bold">
-                      Typographies du Projet
-                    </h5>
-                    <div className="grid sm:grid-cols-2 gap-4">
-                      {project.typography.map((typo, tIdx) => (
-                        <div key={tIdx} className="p-4 rounded-xl bg-[#FFF9F6] border border-[#D98C9B]/20">
-                          <p className="text-lg font-bold text-[#4A2635]">{typo.name}</p>
-                          <p className="text-xs text-[#7A1838]">{typo.usage}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
             )}
 
             {/* Scrum Tab for LOLLI */}
@@ -511,8 +434,8 @@ export default function CaseStudyModal({
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="p-6 rounded-2xl bg-white border border-purple-200 shadow-sm space-y-3">
-                    <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded bg-purple-100 text-purple-800">
+                  <div className="p-6 rounded-2xl bg-white border border-[#D98C9B]/30 shadow-sm space-y-3">
+                    <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded bg-[#F6DDE4] text-[#7A1838]">
                       Modèle de Base
                     </span>
                     <h5 className="text-lg font-bold text-[#4A2635]">
@@ -523,14 +446,14 @@ export default function CaseStudyModal({
                     </p>
                   </div>
 
-                  <div className="p-6 rounded-2xl bg-purple-900 text-purple-50 shadow-sm space-y-3">
-                    <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded bg-purple-700 text-purple-200">
+                  <div className="p-6 rounded-2xl bg-[#4A2635] text-[#FFF9F6] shadow-sm space-y-3">
+                    <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded bg-[#7A1838] text-[#FFF9F6]">
                       Travail Réalisé
                     </span>
                     <h5 className="text-lg font-bold text-white">
                       {project.referenceComparison.replicationTitle}
                     </h5>
-                    <p className="text-xs md:text-sm text-purple-200/90 leading-relaxed">
+                    <p className="text-xs md:text-sm text-[#FFF9F6]/90 leading-relaxed">
                       {project.referenceComparison.replicationDescription}
                     </p>
                   </div>
@@ -543,7 +466,7 @@ export default function CaseStudyModal({
                   <div className="grid sm:grid-cols-2 gap-3 text-xs md:text-sm text-[#4A2635]">
                     {project.referenceComparison.learnings.map((learn, lIdx) => (
                       <div key={lIdx} className="p-3 rounded-xl bg-[#FFF9F6] border border-[#D98C9B]/20 flex items-start gap-2">
-                        <span className="text-purple-600 font-bold">⚡</span>
+                        <span className="text-[#7A1838] font-bold">⚡</span>
                         <span>{learn}</span>
                       </div>
                     ))}

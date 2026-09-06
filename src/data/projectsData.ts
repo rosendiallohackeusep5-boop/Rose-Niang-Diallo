@@ -82,14 +82,14 @@ export const ODC_PROJECTS: ProjectData[] = [
   {
     id: "lolli",
     title: "LOLLI",
-    subtitle: "Projet Digital & Management Agile",
+    subtitle: "Projet Digital & Management Agile Scrum",
     category: "Projet digital — Scrum Master",
     role: "Scrum Master & Coordination d'équipe",
     year: "2024",
     duration: "Sprint intensif ODC",
     context:
-      "Conçu et développé en équipe lors de la formation Orange Digital Center, LOLLI est un projet digital innovant mené avec la méthode Agile Scrum.",
-    heroBgGradient: "from-[#7A1838] via-[#4A2635] to-[#2B101D]",
+      "Conçu et développé en équipe lors de la formation Orange Digital Center, LOLLI est un projet digital mené avec la méthode Agile Scrum sous mon rôle de Scrum Master.",
+    heroBgGradient: "from-[#7A1838] via-[#4A2635] to-[#361522]",
     accentColor: "#D98C9B",
     badgeLabel: "MÉTHODE AGILE & SCRUM MASTER",
     hasLogo: true,
@@ -97,8 +97,8 @@ export const ODC_PROJECTS: ProjectData[] = [
     hasPrototype: true,
     hasMoodboard: true,
     shortDescription:
-      "Plateforme digitale collaborative menée en méthodologie Agile Scrum avec un rôle central de Scrum Master, de la gestion du backlog jusqu'à la livraison finale.",
-    tools: ["Scrum / Agile", "Figma", "Trello / Jira", "Canva", "Google Workspace"],
+      "Plateforme digitale collaborative menée en méthodologie Agile Scrum avec un rôle central de Scrum Master : animation des rituels, priorisation du backlog et coordination de la livraison.",
+    tools: ["Jira", "Figma", "Trello", "Canva", "Google Workspace"],
     deliverables: [
       { label: "Rôle", value: "Scrum Master & Facilitatrice" },
       { label: "Méthodologie", value: "Agile Scrum (Sprints & Cérémonies)" },
@@ -109,15 +109,15 @@ export const ODC_PROJECTS: ProjectData[] = [
       sprintCount: 4,
       ceremonies: [
         "Sprint Planning (Définition des objectifs et estimation des US)",
-        "Daily Stand-up (Synchronisation quotidienne et levée des points de blocage)",
+        "Daily Stand-up (Synchronisation quotidienne et levée des blocages)",
         "Sprint Review (Démonstration des incréments produits)",
-        "Rétrospective de Sprint (Amélioration continue des processus d'équipe)",
+        "Rétrospective de Sprint (Amélioration continue des processus)",
       ],
       roleResponsibilities: [
         "Animation des cérémonies Scrum et maintien de la dynamique d'équipe",
         "Gestion et priorisation du Product Backlog en collaboration avec l'équipe",
-        "Suivi des indicateurs d'avancement et facilitation de la communication transverse",
-        "Alignement entre les contraintes UX/UI, techniques et les délais de livraison",
+        "Suivi des indicateurs d'avancement et facilitation de la communication",
+        "Alignement entre les contraintes UX/UI, techniques et les délais",
       ],
     },
     sections: [
@@ -196,16 +196,16 @@ export const ODC_PROJECTS: ProjectData[] = [
     duration: "Projet Thématique ODC",
     context:
       "SEN FONCIER est une initiative digitale visant à démocratiser l'accès aux données publiques foncières et aux chantiers d'aménagement pour les citoyens au Sénégal.",
-    heroBgGradient: "from-[#2A3A4B] via-[#1E293B] to-[#0F172A]",
-    accentColor: "#38BDF8",
+    heroBgGradient: "from-[#7A1838] via-[#4A2635] to-[#361522]",
+    accentColor: "#D98C9B",
     badgeLabel: "TRANSPARENCE & GOUVERNANCE",
-    hasLogo: false, // EXPLICIT RULE: NO FAKE LOGO
-    hasWireframes: false, // EXPLICIT RULE: NO WIREFRAMES
-    hasPrototype: false, // EXPLICIT RULE: NO PROTOTYPE
+    hasLogo: false, // STRICT RULE: NO FAKE LOGO
+    hasWireframes: false, // STRICT RULE: NO WIREFRAMES
+    hasPrototype: false, // STRICT RULE: NO PROTOTYPE
     hasMoodboard: false,
     shortDescription:
       "Projet digital axé sur la transparence foncière, la visualisation de données citoyennes et l'accessibilité de l'information publique au Sénégal.",
-    tools: ["Recherche Utilisateur", "Architecture de l'information", "Data Visualization", "IA & Synthèse de données"],
+    tools: ["Figma", "Google Workspace", "IA & Synthèse"],
     deliverables: [
       { label: "Positionnement", value: "Transparence & Gouvernance Citoyenne" },
       { label: "Travail Réalisé", value: "Recherche UX, Architecture d'info, Dashboard DataViz" },
@@ -234,7 +234,7 @@ export const ODC_PROJECTS: ProjectData[] = [
         keyPoints: [
           "Cartographie des points de douleur (jargon administratif, lenteur d'accès)",
           "Hiérarchisation des données les plus demandées (localisation, budget, dates de livraison)",
-          "Analyse des meilleures pratiques internationales d'Open Data gouvernemental",
+          "Analyse des meilleures pratiques internationales d'Open Data",
         ],
       },
       {
@@ -285,8 +285,8 @@ export const ODC_PROJECTS: ProjectData[] = [
     duration: "Projet Majeur ODC",
     context:
       "Dakar accueillera en 2026 les premiers Jeux Olympiques sur le sol africain. Ce projet est le seul dans lequel j'ai déployé l'intégralité du cycle UX/UI : de l'architecture de l'information jusqu'au prototypage haute fidélité.",
-    heroBgGradient: "from-[#8C4A1E] via-[#5C2B14] to-[#2E1308]",
-    accentColor: "#F59E0B",
+    heroBgGradient: "from-[#7A1838] via-[#4A2635] to-[#361522]",
+    accentColor: "#D98C9B",
     badgeLabel: "WORKFLOW UX/UI INTÉGRAL",
     hasLogo: true, // Official JOJ logo
     hasWireframes: true,
@@ -294,18 +294,12 @@ export const ODC_PROJECTS: ProjectData[] = [
     hasMoodboard: true,
     shortDescription:
       "Cycle complet de conception UX/UI pour l'application officielle des Jeux Olympiques de la Jeunesse Dakar 2026 : parcours, wireframes, identité et prototype interactif.",
-    tools: ["Figma", "Design System", "Wireframing", "Prototypage Interactif", "Architecture de l'info"],
+    tools: ["Figma", "Canva", "Google Workspace"],
     deliverables: [
       { label: "Domaine", value: "UX/UI Design Mobile & Web" },
       { label: "Livrables", value: "Wireframes, Parcours utilisateur, Maquettes, Prototype" },
       { label: "Éléments Officiels", value: "Logo officiel JOJ & Mascotte AYO intégrés" },
       { label: "Cadre", value: "Orange Digital Center (ODC)" },
-    ],
-    colorPalette: [
-      { name: "Ocre Teranga", hex: "#D97706", role: "Couleur principale chaleureuse" },
-      { name: "Vert Espoir", hex: "#059669", role: "Couleur d'accent dynamique" },
-      { name: "Bleu Océan", hex: "#0284C7", role: "Couleur de soutien institutionnelle" },
-      { name: "Sable Chaud", hex: "#FEF3C7", role: "Fond et surfaces claires" },
     ],
     sections: [
       {
@@ -380,9 +374,9 @@ export const ODC_PROJECTS: ProjectData[] = [
     year: "2024",
     duration: "Projet de Branding ODC",
     context:
-      "NAYROSE est un projet complet de branding et d'identité visuelle haut de gamme développé autour de l'univers de la fraise artisanale, alliant fraîcheur naturelle et tendresse maternelle.",
-    heroBgGradient: "from-[#9E2A48] via-[#6B172E] to-[#3B0C18]",
-    accentColor: "#F472B6",
+      "NAYROSE est un projet complet de branding et d'identité visuelle développé autour de l'univers de la fraise artisanale, alliant fraîcheur naturelle et tendresse maternelle.",
+    heroBgGradient: "from-[#7A1838] via-[#4A2635] to-[#361522]",
+    accentColor: "#D98C9B",
     badgeLabel: "BRANDING & DESIGN DE MARQUE",
     hasLogo: true,
     hasWireframes: false,
@@ -390,22 +384,12 @@ export const ODC_PROJECTS: ProjectData[] = [
     hasMoodboard: true,
     shortDescription:
       "Création complète d'une marque artisanale autour des fraises : naming, logo, palette, charte graphique, packaging et supports de communication multicanaux.",
-    tools: ["Canva", "Figma", "Design Graphique", "Typographie & Couleur", "Mockup Design"],
+    tools: ["Adobe Illustrator", "Canva", "Figma"],
     deliverables: [
       { label: "Expertise", value: "Naming, Direction Artistique & Branding" },
       { label: "Livrables", value: "Logo & déclinaisons, Charte graphique, Packagings, Affiches" },
       { label: "Univers", value: "Gourmandise, Nature, Fraîcheur & Tendresse" },
       { label: "Cadre", value: "Orange Digital Center (ODC)" },
-    ],
-    colorPalette: [
-      { name: "Rouge Fraise Gourmande", hex: "#BE123C", role: "Couleur primaire de marque" },
-      { name: "Rose Pétale", hex: "#F472B6", role: "Teinte douce d'accompagnement" },
-      { name: "Vert Feuille Fraîche", hex: "#15803D", role: "Accent naturel et végétal" },
-      { name: "Crème Vanillée", hex: "#FFFBEB", role: "Fond doux et chaleureux" },
-    ],
-    typography: [
-      { name: "Playfair Display", usage: "Titres & Logo — Élégance et prestige" },
-      { name: "Inter", usage: "Textes & Packagings — Clarté et modernité" },
     ],
     sections: [
       {
@@ -469,8 +453,8 @@ export const ODC_PROJECTS: ProjectData[] = [
     duration: "Projet Fil Rouge & Soutenance ODC",
     context:
       "Projet fil rouge principal de ma formation Orange Digital Center sur la thématique AI & Innovation. JÀMBAAR est une plateforme SportTech multi-disciplines conçue pour détecter, évaluer et propulser les jeunes talents sportifs grâce à l'intelligence artificielle.",
-    heroBgGradient: "from-[#112E24] via-[#0B1E17] to-[#05110D]",
-    accentColor: "#10B981",
+    heroBgGradient: "from-[#7A1838] via-[#4A2635] to-[#361522]",
+    accentColor: "#D98C9B",
     badgeLabel: "PROJET DE SOUTENANCE — ODC",
     hasLogo: true,
     hasWireframes: true,
@@ -479,18 +463,12 @@ export const ODC_PROJECTS: ProjectData[] = [
     isDefenseProject: true,
     shortDescription:
       "Projet fil rouge ODC : plateforme SportTech multi-sports exploitant l'IA pour la détection, le suivi des performances et la visibilité des jeunes athlètes.",
-    tools: ["IA Générative & Analyse", "Figma", "UX Research", "Prototypage", "Design System"],
+    tools: ["Figma", "IA & Prompting", "Canva", "Google Workspace"],
     deliverables: [
       { label: "Statut", value: "Projet de Soutenance ODC (Fil Rouge)" },
       { label: "Périmètre Sportif", value: "Multi-disciplines (Football, Athlétisme, Basketball, etc.)" },
       { label: "Innovation", value: "Scouting assisté par IA, Analyse vidéo & Matching" },
       { label: "Livrables", value: "Logo, Wireframes, UI Design, Prototype, Présentation de soutenance" },
-    ],
-    colorPalette: [
-      { name: "Vert Énergie & Victoire", hex: "#10B981", role: "Couleur phare de dynamisme" },
-      { name: "Or Triomphe", hex: "#F59E0B", role: "Symbole d'excellence sportive" },
-      { name: "Anthracite Stade", hex: "#0F172A", role: "Fond moderne et contrasté" },
-      { name: "Blanc Pur", hex: "#FFFFFF", role: "Lisibilité maximale des stats" },
     ],
     sections: [
       {
@@ -565,8 +543,8 @@ export const ODC_PROJECTS: ProjectData[] = [
     duration: "Atelier Pratique ODC",
     context:
       "Dans le cadre de l'apprentissage intensif de Figma à Orange Digital Center, cet exercice avait pour but de reproduire avec exactitude l'interface de l'application de santé féminine FLO afin de maîtriser les composants, les contraintes, les auto-layouts et la hiérarchie visuelle.",
-    heroBgGradient: "from-[#5B21B6] via-[#3B0764] to-[#1E0438]",
-    accentColor: "#C084FC",
+    heroBgGradient: "from-[#7A1838] via-[#4A2635] to-[#361522]",
+    accentColor: "#D98C9B",
     badgeLabel: "EXERCICE DE REPRODUCTION MAQUETTAGE",
     hasLogo: false, // EXPLICIT RULE: NO PERSONAL LOGO CREATED
     hasWireframes: false,
@@ -575,7 +553,7 @@ export const ODC_PROJECTS: ProjectData[] = [
     isReplicationExercise: true,
     shortDescription:
       "Exercice de maîtrise Figma : reproduction fidèle des interfaces de l'application FLO (calendrier, cards de suivi, typographies, espacements et auto-layouts).",
-    tools: ["Figma", "Auto-layout", "Composants & Variantes", "Hiérarchie Visuelle", "UI Design"],
+    tools: ["Figma"],
     deliverables: [
       { label: "Type d'exercice", value: "Reproduction de maquettage d'application existante" },
       { label: "Objectif pédagogique", value: "Précision au pixel, maîtrise d'Auto-layout & composants" },
@@ -648,7 +626,7 @@ export const CANVA_PRESENTATIONS: CanvaPresentation[] = [
     title: "Présentation de Pitch & Synthèse Projet",
     context: "Soutenances et revues de projet — Orange Digital Center",
     objective: "Structurer un storytelling percutant pour convaincre un jury en un temps record.",
-    tool: "Canva Pro",
+    tool: "Canva",
     slideCount: 12,
     tags: ["Pitch Deck", "Storytelling", "Design Editorial", "Hiérarchie"],
     coverColor: "from-[#7A1838] to-[#4A2635]",
@@ -706,11 +684,11 @@ export const CANVA_PRESENTATIONS: CanvaPresentation[] = [
     title: "Stratégie de Communication & Réseaux Sociaux",
     context: "Atelier Stratégie Digitale & Marketing — ODC",
     objective: "Formaliser un plan d'action de communication multicanal avec un rendu éditorial moderne.",
-    tool: "Canva Pro",
+    tool: "Canva",
     slideCount: 16,
     tags: ["Marketing Digital", "Plan Média", "Social Media", "Brand Content"],
-    coverColor: "from-[#8C4A1E] to-[#4A2635]",
-    accentColor: "#F59E0B",
+    coverColor: "from-[#7A1838] to-[#4A2635]",
+    accentColor: "#D98C9B",
     slides: [
       {
         id: 1,
@@ -718,7 +696,7 @@ export const CANVA_PRESENTATIONS: CanvaPresentation[] = [
         caption: "Vue d'ensemble des objectifs de notoriété et d'engagement.",
         category: "Stratégie",
         bgColor: "#4A2635",
-        accentColor: "#F59E0B",
+        accentColor: "#F6DDE4",
         keyElements: ["Objectifs SMART", "Cibles prioritaires", "Tone of Voice"],
       },
       {
@@ -727,7 +705,7 @@ export const CANVA_PRESENTATIONS: CanvaPresentation[] = [
         caption: "Organisation hebdomadaire des thématiques et formats de publications.",
         category: "Planning",
         bgColor: "#FFF9F6",
-        accentColor: "#8C4A1E",
+        accentColor: "#7A1838",
         keyElements: ["Planning bimensuel", "Piliers de contenu", "Formats Reels / Carrousels"],
       },
       {
@@ -744,8 +722,8 @@ export const CANVA_PRESENTATIONS: CanvaPresentation[] = [
         title: "Exemples de Visuels & Templates",
         caption: "Aperçu des déclinaisons créatives prêtes à l'emploi.",
         category: "Créa",
-        bgColor: "#2E1308",
-        accentColor: "#F59E0B",
+        bgColor: "#361522",
+        accentColor: "#D98C9B",
         keyElements: ["Mise en scène mockups smartphone", "Charte visuelle", "Variations thématiques"],
       },
     ],
@@ -755,19 +733,19 @@ export const CANVA_PRESENTATIONS: CanvaPresentation[] = [
     title: "Veille & Tendances IA & Design Digital",
     context: "Recherche & Analyse Technologique — ODC",
     objective: "Synthétiser les évolutions des outils d'IA générative dans les processus de design.",
-    tool: "Canva Pro",
+    tool: "Canva",
     slideCount: 10,
     tags: ["Intelligence Artificielle", "Veille Tech", "UI/UX Trends", "Infographie"],
-    coverColor: "from-[#112E24] to-[#05110D]",
-    accentColor: "#10B981",
+    coverColor: "from-[#7A1838] to-[#4A2635]",
+    accentColor: "#D98C9B",
     slides: [
       {
         id: 1,
         title: "L'IA dans le Workflow du Designer",
         caption: "Panorama des outils d'assistance créative et de productivité.",
         category: "Panorama",
-        bgColor: "#0B1E17",
-        accentColor: "#10B981",
+        bgColor: "#4A2635",
+        accentColor: "#F6DDE4",
         keyElements: ["Cartographie des outils", "Gains de temps mesurés", "Perspectives 2026"],
       },
       {
@@ -776,7 +754,7 @@ export const CANVA_PRESENTATIONS: CanvaPresentation[] = [
         caption: "Exemples concrets d'intégration de l'IA dans l'UX Research.",
         category: "Cas d'usage",
         bgColor: "#FFF9F6",
-        accentColor: "#112E24",
+        accentColor: "#7A1838",
         keyElements: ["Prompting appliqué", "Synthèse d'interviews", "Génération de personae"],
       },
       {
@@ -784,8 +762,8 @@ export const CANVA_PRESENTATIONS: CanvaPresentation[] = [
         title: "Éthique & Propriété Intellectuelle",
         caption: "Recommandations pour un usage responsable et transparent.",
         category: "Éthique",
-        bgColor: "#05110D",
-        accentColor: "#10B981",
+        bgColor: "#361522",
+        accentColor: "#D98C9B",
         keyElements: ["Cadre déontologique", "Protection des données", "Transparence client"],
       },
     ],
